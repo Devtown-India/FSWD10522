@@ -1,23 +1,15 @@
-const obj = {
-    name: 'John',
-    car:"SLS"
-}
-console.log(obj)
-
 class Car{
     constructor(model,make){
         this.make = make;
         this.model = model;
     }
+
+    move(){
+        console.log("car is moving")
+    }
 }
 
+const car1 = new Car('BMW','X5');
+const car2 = new Car(19);
 
-// console.log(window)
-
-// const car = {
-//     make:"Mercedes",
-//     model:"GLE-63",
-//     move:function(){
-//         console.log(this)
-//     }
-// }
+// console.log(car1.model)
