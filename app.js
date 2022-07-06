@@ -14,12 +14,12 @@
 const arr = [1,2,3,4,5,6,7,8,9,10];
 
 // const sum = arr.reduce((a,b)=>a+b)
-const sum = arr.reduce(function(a,b){
-    // console.log(a,b)
-    return a*b
-})
+// const sum = arr.reduce(function(a,b){
+//     // console.log(a,b)
+//     return a*b
+// })
 
-console.log(sum)
+// console.log(sum)
 
 // const newArr = arr.filter((item)=> item % 2 === 0)
 // console.log(newArr)
@@ -35,3 +35,12 @@ console.log(sum)
 //         newArr.push(e);
 //     }
 // })
+
+const f = function(name){
+    this.name=name
+    return 10
+}
+
+const f2 = new f("mercedes")
+
+console.log(f2)
