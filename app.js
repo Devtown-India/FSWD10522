@@ -1,17 +1,25 @@
-const add = function(a=0, b=0) {
-    return a + b;
-}
-const addArrow2 = (a=0, b=0)=> {
-    return a+b;
-}
-const addArrow1 = (a=0, b=0)=> a + b;
+// // const arr1 = [1, 2, 3 ];
+// // const arr = [...arr1]
 
-const arr = [1,2,3,4,5];
-const arr2 = arr.map(item => item*2);
-const sum = arr.reduce((a,b)=>a+b)
+// // console.log(arr)
 
-console.log(arr2)
-console.log(sum)
+// // console.log(arr1)
+// // console.log(arr2)
+// // console.log(...arr1)
+// // console.log(...arr2,)
+// // const arr3 = [...arr1, ...arr2]
+// // console.log(arr3)
+// // console.log(...arr3)
 
+// const car = {
+//     brand:"mercedes"
+// }
+// const engine ={
+//     type:"v8"
+// }
+// console.log({...car, ...engine})
 
-// console.log(addArrow(1,2))
+const Name = "John"
+const age = 21
+console.log(Name +" is "+ age+" years old")
+console.log(`${Name} is ${age>20 ? "OOOOOLLLDD":"YOUNNG"} years old`)
