@@ -1,17 +1,10 @@
-setTimeout(()=>{
-    console.log(1)
-}, 0)
+import makeMeAPromise from './index.js'
+const data = {
+    car: 'BMW',
+    color: 'red',
+    year: '2018',
+    price: '$1,000,000',
+}
 
-for(let i =0;i<10000;i++){
-    console.log("loop")
-}
-for(let i =0;i<10000;i++){
-    console.log("loop")
-}
-for(let i =0;i<10000;i++){
-    console.log("loop")
-}
-for(let i =0;i<10000;i++){
-    console.log("loop")
-}
-console.log(2)
+console.log(makeMeAPromise(data))
+console.log(makeMeAPromise(data,'reject'))
