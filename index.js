@@ -1,9 +1,11 @@
-const makeMeApromise = (data,state="resolve")=> new Promise((resolve, reject)=>{
-    if(state=='resolve'){
-        resolve(data);
-    }else{
-        reject("OOps!!!!");
-    }
+const makeMeApromise = ()=> new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+    resolve({
+        car: 'BMW',
+        color: 'red',
+        year: '2018',
+    })
+    },700)
 })
 
 export default makeMeApromise;
