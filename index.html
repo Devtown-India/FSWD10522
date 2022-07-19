@@ -7,16 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./app.js"></script>
     <title>Document</title>
+    <style>
+        div.clock {
+            width: 150px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform: rotate(-90deg);
+        }
+        
+        div.second {
+            transition: 0.2s ease-in;
+        }
+        
+        div.second::after {
+            content: "";
+            width: 75px;
+            height: 4px;
+            background-color: #ffbf00;
+            position: absolute;
+            border-end-end-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 id="heading">this is a heading</h1>
-    <div id="container">
-        <ul>
-
-        </ul>
+    <h1 id="timer">0</h1>
+    <div class="clock">
+        <div class="second"></div>
     </div>
-
 </body>
 
-</html>
+</html

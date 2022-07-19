@@ -5,15 +5,15 @@
 
 // console.log(ele)
 
-const list = document.querySelector('ul')
-const todos = ['Eat Food','Go for a run',"Workout",'sleep']
-todos.map(todo=>{
-    const toAdd = document.createElement('li')
-    const text = document.createTextNode(todo)
-    toAdd.appendChild(text)
-    list.appendChild(toAdd)
-
-})
+// const list = document.querySelector('ul')
+// const todos = ['Eat Food','Go for a run',"Workout",'sleep']
+// todos.map(todo=>{
+//     const toAdd = document.createElement('li')
+//     // const text = document.createTextNode(todo)
+//     // toAdd.appendChild(text)
+//     toAdd.innerHTML = todo
+//     list.appendChild(toAdd)
+// })
 
 // ele.innerHTML="modified by javscript"
 // ele.style=`
@@ -25,3 +25,13 @@ todos.map(todo=>{
 // ele.classList.add("nsomething")
 // ele.classList.remove("new-class")
 // console.log(ele.classList)
+
+const timer = document.querySelector('#timer')
+const secondHand = document.querySelector('div.second')
+let time =0;
+const t = setInterval(()=>{ 
+    time++;
+    secondHand.style=`transform:rotate(${time*6}deg)`
+    timer.innerHTML=time;
+},1000)
+
