@@ -1,31 +1,53 @@
-import getData from './index.js'
 
-const response = getData()
+// const somePromise = new Promise((resolve,reject)=>{
+//     const car = {
+//         make: 'Ford',
+//         model: 'Mustang',
+//         year: 1969
+//     }
+//     setTimeout(()=>{
+//         reject("Something went wrong")
+//     },3000)
+// })
 
-const doThis = (data)=>{
-    console.log(`do something with this data`,data)
+// somePromise
+// .then((promiseResult)=>{
+//     console.log(promiseResult.year)
+// })
+// .catch((error)=>{
+//     console.log(error)
+// })
+
+// console.log(somePromise)
+
+// const response = fetch('http://jsonplaceholder.typicode.com/users')
+
+// response
+// .then(dataStream=>dataStream.json())
+// .then(jsonData=>console.log(jsonData))
+// .catch(error=>console.log(error))
+
+// response
+// .then(function(dataStream){
+//     return dataStream.json()
+// })
+// .then(function(jsonData){
+//     console.log(jsonData)
+// })
+
+const taskThatTakesTime = new Promise((resolve,reject)=>{
+    resolve({
+        name: 'John',
+        age: 30
+    })
+})
+
+taskThatTakesTime.then(data=>console.log(data))
+setTimeout(()=>{
+    console.log("settimeout")
+})
+
+console.log(1)
+for(let i =0;i<1000;i++){
+    console.log('hi')
 }
-
-response.then(doThis)
-
-// console.log(response)
-
-
-
-// setTimeout(()=>{
-// console.log(response)
-// },800)
-
-// const data = {
-//     car: 'BMW',
-//     color: 'red',
-//     year: '2018',
-//     price: '$1,000,000',
-// }
-
-// console.log(makeMeAPromise(data))
-// console.log(makeMeAPromise(data,'reject'))
-
-// const response = fetch('https://jsonplaceholder.typicode.com/todos')
-// console.log(response)
-
