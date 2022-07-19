@@ -5,7 +5,6 @@
 
 // console.log(ele)
 
-// const list = document.querySelector('ul')
 // const todos = ['Eat Food','Go for a run',"Workout",'sleep']
 // todos.map(todo=>{
 //     const toAdd = document.createElement('li')
@@ -34,4 +33,16 @@ const t = setInterval(()=>{
     secondHand.style=`transform:rotate(${time*6}deg)`
     timer.innerHTML=time;
 },1000)
+
+const list = document.querySelector('ul')
+
+fetch('https://jsonplaceholder.typicode.com/todos').then(response=>response.json()).then(todos=>{
+    todos.map(todo=>{
+    const toAdd = document.createElement('li')
+    // const text = document.createTextNode(todo)
+    // toAdd.appendChild(text)
+    toAdd.innerHTML = todo.title
+    list.appendChild(toAdd)
+})
+})
 
