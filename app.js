@@ -1,53 +1,27 @@
+// ele.innerHTML = "Hello World"
+// ele.innerHTML = "Hello people"
+// const ele = document.getElementsByClassName("list")
+// const ele = document.querySelectorAll("ul")
 
-// const somePromise = new Promise((resolve,reject)=>{
-//     const car = {
-//         make: 'Ford',
-//         model: 'Mustang',
-//         year: 1969
-//     }
-//     setTimeout(()=>{
-//         reject("Something went wrong")
-//     },3000)
-// })
+// console.log(ele)
 
-// somePromise
-// .then((promiseResult)=>{
-//     console.log(promiseResult.year)
-// })
-// .catch((error)=>{
-//     console.log(error)
-// })
+const list = document.querySelector('ul')
+const todos = ['Eat Food','Go for a run',"Workout",'sleep']
+todos.map(todo=>{
+    const toAdd = document.createElement('li')
+    const text = document.createTextNode(todo)
+    toAdd.appendChild(text)
+    list.appendChild(toAdd)
 
-// console.log(somePromise)
-
-// const response = fetch('http://jsonplaceholder.typicode.com/users')
-
-// response
-// .then(dataStream=>dataStream.json())
-// .then(jsonData=>console.log(jsonData))
-// .catch(error=>console.log(error))
-
-// response
-// .then(function(dataStream){
-//     return dataStream.json()
-// })
-// .then(function(jsonData){
-//     console.log(jsonData)
-// })
-
-const taskThatTakesTime = new Promise((resolve,reject)=>{
-    resolve({
-        name: 'John',
-        age: 30
-    })
 })
 
-taskThatTakesTime.then(data=>console.log(data))
-setTimeout(()=>{
-    console.log("settimeout")
-})
-
-console.log(1)
-for(let i =0;i<1000;i++){
-    console.log('hi')
-}
+// ele.innerHTML="modified by javscript"
+// ele.style=`
+// color:dodgerblue; 
+// font-size:30px;
+// font-family:Metropolis
+// `
+// ele.classList.add("new-class")
+// ele.classList.add("nsomething")
+// ele.classList.remove("new-class")
+// console.log(ele.classList)
