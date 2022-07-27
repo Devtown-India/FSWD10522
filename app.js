@@ -20,12 +20,12 @@ const tie =()=>{
     messageBox.innerHTML="It is a tie";
 }
 
-const userWins =()=>{
-    messageBox.innerHTML="You win";
+const userWins =(message)=>{
+    messageBox.innerHTML=message;
     scoreMe.innerHTML=++uS;
 }
-const computerWins =()=>{
-    messageBox.innerHTML="You lost";
+const computerWins =(message)=>{
+    messageBox.innerHTML=message;
     scoreComp.innerHTML=++cS;
 }
 
@@ -38,33 +38,33 @@ const game = (userChoice)=>{
                     tie();
                     break;
                 case 1:
-                    computerWins();
+                    computerWins("Paper covers rock. Computer wins");
                     break;
                 case 2:
-                    userWins();
+                    userWins("Rock beats scissors. You win");
                     break;
             }
             break;
         case 1:
             switch(computerChoice){
                 case 0:
-                    userWins();
+                    userWins("Paper covers rock. You win");
                     break;
                 case 1:
                     tie();
                     break;
                 case 2:
-                    computerWins();
+                    computerWins("Scissors cut paper. Computer wins");
                     break;
             }
             break;
         case 2:
             switch(computerChoice){
                 case 0:
-                    computerWins();
+                    computerWins("Rock beats scissors. Computer wins");
                     break;
                 case 1:
-                    userWins();
+                    userWins("Scissors cut paper. You win");
                     break;
                 case 2:
                     tie();
