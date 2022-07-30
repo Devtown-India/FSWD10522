@@ -1,76 +1,35 @@
-const scoreComp = document.querySelector("#comp");
-const scoreMe = document.querySelector("#me");
-const messageBox = document.querySelector("#message");
+const app_id = "286bc7ab"
+const app_key = "8a9fe54fcadb987652e0c8ccaa10662c"
 
-let uS = 0, cS = 0;
+const query = document.querySelector('header.search input')
+const search = document.querySelector('header.search button')
+const container = document.querySelector('.recipies')
 
-const options = {
-    0:"rock",
-    1:"paper",
-    2:"scissors"
-}
+const handleSearch = async ()=>{
+    try {
+        container.innerHTML = ''
+        const endpoint = `https://api.edamam.com/search?q=${query.value}&app_id=${app_id}&app_key=${app_key}`
+        const response = await fetch(endpoint)
+        const {hits} = await response.json()
 
-const computerResponse = ()=>{
-    const random = Math.floor(Math.random()*3);
-    // return options[random];
-    return random;
-}
+        hits.map(({recipe})=>{
+            console.log(recipe)
+            const {image, label, url,calories} = recipe
+            const ele = document.createElement('div')
+            ele.innerHTML = `
+            <div class="recipe">
+                <h2>${label}</h2>
+                <img src="${image}" width="150px" alt="${label}">
+                <h3>${calories}</h3>
+                <a href="${url}" target="_blank">View Recipe</a>
+            </div>
+            `
+            container.appendChild(ele)
+        })
 
-const tie =()=>{
-    messageBox.innerHTML="It is a tie";
-}
-
-const userWins =(message)=>{
-    messageBox.innerHTML=message;
-    scoreMe.innerHTML=++uS;
-}
-const computerWins =(message)=>{
-    messageBox.innerHTML=message;
-    scoreComp.innerHTML=++cS;
-}
-
-const game = (userChoice)=>{
-    const computerChoice = computerResponse();
-    switch(userChoice){
-        case 0:
-            switch(computerChoice){
-                case 0:
-                    tie();
-                    break;
-                case 1:
-                    computerWins("Paper covers rock. Computer wins");
-                    break;
-                case 2:
-                    userWins("Rock beats scissors. You win");
-                    break;
-            }
-            break;
-        case 1:
-            switch(computerChoice){
-                case 0:
-                    userWins("Paper covers rock. You win");
-                    break;
-                case 1:
-                    tie();
-                    break;
-                case 2:
-                    computerWins("Scissors cut paper. Computer wins");
-                    break;
-            }
-            break;
-        case 2:
-            switch(computerChoice){
-                case 0:
-                    computerWins("Rock beats scissors. Computer wins");
-                    break;
-                case 1:
-                    userWins("Scissors cut paper. You win");
-                    break;
-                case 2:
-                    tie();
-                    break;
-            }
-            break;
+    } catch (error) {
+        console.log(error)
     }
-    
 }
+
+search.addEventListener('click',handleSearch)
